@@ -1,0 +1,221 @@
+@import url("https://fonts.google.com/specimen/Open+Sans?selection.family=Open+Sans")
+
+* 
+	box-sizing: border-box
+	
+$white: #fff
+$gray: #ccc 
+
+
+body 
+	margin: 0
+	font-family: 'Open Sans', sans-serif
+	
+
+.container 
+	width: 100%
+	max-width: 1200px
+	margin: auto
+	
+
+header 
+	background-color: #313234
+	height: auto
+
+
+header
+	ul
+		margin: 0 auto
+		padding: 0
+		list-style-type: none
+		float: right
+	a
+		line-height: 50px
+		padding: 0 20px
+		color: $white
+		text-decoration: none
+		text-transform: uppercase
+		&:hover
+			background: #636569
+	img
+		padding: 10px 0
+
+
+.row:before,
+.row:after 
+	content: ""
+	display: table
+	clear: both
+
+
+[class*="col-"] 
+	float: left
+	min-height: 1px
+	padding: 12px
+	width: 100%
+
+
+.nav-element 
+	display: inline-block
+
+
+h2 
+	font-weight: bold
+	font-size: 20px
+
+
+.hero 
+	background-image: url("https://images.unsplash.com/photo-1473503993293-84743f5fda84?dpr=1&auto=format&fit=crop&w=1500&h=844&q=80&cs=tinysrgb&crop=&bg=")
+	height: 30vh
+	width: 100%
+	background-size: cover
+
+
+
+.slogan 
+	background-color: rgba (236, 240, 241, 0.5)
+	float: right
+	max-width: 800px
+	font-size: 40px
+	color: white
+	margin-right: 10px
+
+
+.col-offer 
+	overflow: auto
+	text-align: center
+
+
+i.fa 
+	font-size: 30px
+	transform: uppercase
+
+
+section 
+	.container 
+		margin: 50px auto
+		text-align: center
+
+
+.featured 
+	text-align: center
+	margin-top: 50px auto
+
+
+.gallery 
+	img 
+		float: left
+		width: 100%
+		margin: 0
+		padding: 0 
+		&:hover 
+			cursor: pointer
+	.col-m-3 
+		position: relative
+		padding: 0
+
+
+.layer 
+	position: absolute
+	color: rgba(0,0,0, 0.5)
+	font-size: 20px
+	width: 100%
+	height: 100%
+	visibility: hidden
+	text-align: center
+	line-height: 25vw
+	background: $gray
+
+
+.gallery .col-m-3:hover .layer 
+	visibility: visible
+	
+	
+=border-radius ($radius)
+	-webkit-border-radius:	$radius
+	-moz-border-radius:		$radius
+	-ms-border-radius:		$radius
+	border-radius:			$radius
+
+
+.team img 
+	+border-radius (50%)
+	height: 80px
+	width: 80px
+	padding: 0
+	margin: 0
+
+
+.team,
+.numbers
+	text-align: center
+
+
+.icon-btn 
+	height: 30px
+	width: 30px 
+	padding: 0
+	color: white
+	background-color: blue
+	margin: 0 
+	border: 0
+	cursor: pointer
+	font-size: 2em
+	line-height: 10px
+	text-align: center
+
+
+.awesome 
+	background-color: $gray
+	@extend .team
+
+
+.footer 
+	font-size: 10px
+	background-color: $gray
+	
+
+@media (max-width: 767px)
+	@for $i from 1 through 12
+		.col-s-#{$i}
+			width: (100% / 12) * $i
+    
+	.nav-element 
+		float: none 
+		display: block
+		text-align: center
+    
+    
+	header
+		ul
+			float: none
+  	
+    
+	.slogan 
+		font-size: 30px
+    
+    
+	.col-offer 
+		float: none 
+		display: block
+		width: 50%
+		margin: 0 auto
+    
+    
+	.layer 
+		visibility: visible
+		color: black
+		background: rgba(0,0,0, 0.5)
+	
+	
+	.awesome 
+		text-align: center
+	
+	.footer 
+		font-size: inherit
+	
+
+@media (min-width: 768px) 
+	@for $i from 1 through 12
+		.col-m-#{$i}
+			width: (100% / 12) * $i
