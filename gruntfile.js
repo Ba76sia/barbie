@@ -11,9 +11,7 @@ module.exports = function(grunt) {
           'css/main.css': 'sass/main.sass'
         }
       }
-    }
-  });
-    imagemin: {
+        imagemin: {
             dynamic: {
                 files: [{
                     expand: true,
@@ -23,27 +21,31 @@ module.exports = function(grunt) {
                 }]
             }
         }
-    watch: {
-    scripts: {
-        files: ['sass/*.sass'],
-        tasks: ['sass'],
-        options: {
-            spawn: false,
-        },
-    }
-}
-    browserSync: {
-    dev: {
-        bsFiles: {
-            src : 'assets/css/style.css'
-        },
-        options: {
-            watchTask: true,
-            server: {
-            baseDir: "./"
+        watch: {
+            scripts: {
+                files: ['sass/*.sass'],
+                tasks: ['sass'],
+                options: {
+                    spawn: false,
+                },
+            }
+        }
+        browserSync: {
+            dev: {
+                bsFiles: {
+                src : 'assets/css/style.css'
+                },
+                options: {
+                watchTask: true,
+                server: {
+                baseDir: "./"
+                }
+                }
+            }
         }
     }
-}
+  });
+    
   // Load the plugins tasks
     grunt.loadNpmTasks('grunt-sass');
     grunt.loadNpmTasks('grunt-contrib-imagemin');
