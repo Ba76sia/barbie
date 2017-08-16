@@ -1,4 +1,6 @@
-package.json
 *.css
 output.css.map
 node_modules/
+.sass-cache/
+
+
