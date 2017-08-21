@@ -9,8 +9,8 @@ module.exports = function(grunt) {
       dist: {
         files: {
           'css/main.css': 'sass/main.sass'
-        }
-      }
+        },
+      },
         imagemin: {
             dynamic: {
                 files: [{
@@ -18,9 +18,9 @@ module.exports = function(grunt) {
                     cwd: 'images/',
                     src: ['**/*.{png,jpg,gif}'],
                     dest: 'images/build/'
-                }]
-            }
-        }
+                }],
+            },
+        },
         watch: {
             scripts: {
                 files: ['sass/*.sass'],
@@ -28,8 +28,8 @@ module.exports = function(grunt) {
                 options: {
                     spawn: false,
                 },
-            }
-        }
+            },
+        },
         browserSync: {
             dev: {
                 bsFiles: {
@@ -39,11 +39,11 @@ module.exports = function(grunt) {
                 watchTask: true,
                 server: {
                 baseDir: "./"
-                }
-                }
-            }
-        }
-    }
+                },
+                },
+            },
+        },
+    },
   });
     
   // Load the plugins tasks
